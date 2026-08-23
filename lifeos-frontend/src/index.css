@@ -1,0 +1,248 @@
+@import "tailwindcss";
+
+@theme {
+  --color-theme-bg: var(--bg-primary);
+  --color-theme-surface: var(--bg-secondary);
+  --color-theme-card: var(--bg-card);
+  --color-theme-card-hover: var(--bg-card-hover);
+  --color-theme-border: var(--border-color);
+  --color-theme-main: var(--text-main);
+  --color-theme-muted: var(--text-muted);
+  --color-theme-accent: var(--accent);
+  --color-theme-accent-secondary: var(--accent-secondary);
+  --color-theme-accent-hover: var(--accent-hover);
+  --color-theme-accent-light: var(--accent-light);
+}
+
+@layer base {
+  /* 1. Dark Theme (Slate / Zinc + Warm Orange & Gold) */
+  :root, [data-theme="dark"], .dark {
+    --bg-primary: #090d16;
+    --bg-secondary: #0f1522;
+    --bg-card: #141c2e;
+    --bg-card-hover: #1b253b;
+    --border-color: #222d42;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --accent: #f97316;
+    --accent-secondary: #f59e0b;
+    --accent-hover: #ea580c;
+    --accent-light: rgba(249, 115, 22, 0.12);
+  }
+
+  /* 2. Light Theme */
+  [data-theme="light"], .light {
+    --bg-primary: #f8fafc;
+    --bg-secondary: #ffffff;
+    --bg-card: #ffffff;
+    --bg-card-hover: #f1f5f9;
+    --border-color: #e2e8f0;
+    --text-main: #0f172a;
+    --text-muted: #64748b;
+    --accent: #ea580c;
+    --accent-secondary: #d97706;
+    --accent-hover: #c2410c;
+    --accent-light: rgba(234, 88, 12, 0.1);
+  }
+
+  /* 3. Cyber Blue Theme */
+  [data-theme="blue"] {
+    --bg-primary: #050b18;
+    --bg-secondary: #0a1329;
+    --bg-card: #0f1b3a;
+    --bg-card-hover: #162752;
+    --border-color: #1e3363;
+    --text-main: #f0f9ff;
+    --text-muted: #7dd3fc;
+    --accent: #0284c7;
+    --accent-secondary: #38bdf8;
+    --accent-hover: #0369a1;
+    --accent-light: rgba(56, 189, 248, 0.15);
+  }
+
+  /* 4. Emerald Obsidian Theme */
+  [data-theme="emerald"] {
+    --bg-primary: #04120e;
+    --bg-secondary: #081d17;
+    --bg-card: #0d2820;
+    --bg-card-hover: #14382d;
+    --border-color: #1b4d3e;
+    --text-main: #ecfdf5;
+    --text-muted: #6ee7b7;
+    --accent: #10b981;
+    --accent-secondary: #34d399;
+    --accent-hover: #059669;
+    --accent-light: rgba(16, 185, 129, 0.15);
+  }
+
+  /* 5. Dracula Purple Theme */
+  [data-theme="purple"] {
+    --bg-primary: #0f0919;
+    --bg-secondary: #160d26;
+    --bg-card: #1f1335;
+    --bg-card-hover: #2a1a47;
+    --border-color: #3b2361;
+    --text-main: #faf5ff;
+    --text-muted: #d8b4fe;
+    --accent: #a855f7;
+    --accent-secondary: #f472b6;
+    --accent-hover: #9333ea;
+    --accent-light: rgba(168, 85, 247, 0.15);
+  }
+
+  /* 6. Dual-Tone Sunset Synthwave Theme (Neon Orange & Fuchsia Pink) */
+  [data-theme="sunset"] {
+    --bg-primary: #0d0814;
+    --bg-secondary: #140d20;
+    --bg-card: #1c122c;
+    --bg-card-hover: #271a3d;
+    --border-color: #382455;
+    --text-main: #fff0f6;
+    --text-muted: #f472b6;
+    --accent: #f97316;
+    --accent-secondary: #ec4899;
+    --accent-hover: #db2777;
+    --accent-light: rgba(236, 72, 153, 0.18);
+  }
+
+  /* 7. OLED True Black (Midnight Indigo) */
+  [data-theme="midnight"] {
+    --bg-primary: #000000;
+    --bg-secondary: #08080a;
+    --bg-card: #111116;
+    --bg-card-hover: #191922;
+    --border-color: #262636;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --accent: #6366f1;
+    --accent-secondary: #8b5cf6;
+    --accent-hover: #4f46e5;
+    --accent-light: rgba(99, 102, 241, 0.16);
+  }
+
+  /* 8. Cyberpunk Neon (Cyan & Gold) */
+  [data-theme="cyberpunk"] {
+    --bg-primary: #06070a;
+    --bg-secondary: #0c0e14;
+    --bg-card: #121520;
+    --bg-card-hover: #1a1e2e;
+    --border-color: #242b42;
+    --text-main: #f0fdfa;
+    --text-muted: #67e8f9;
+    --accent: #06b6d4;
+    --accent-secondary: #eab308;
+    --accent-hover: #0891b2;
+    --accent-light: rgba(6, 182, 212, 0.16);
+  }
+
+  /* 9. Nordic Mint Frost (Slate & Mint) */
+  [data-theme="nordic"] {
+    --bg-primary: #0f172a;
+    --bg-secondary: #1e293b;
+    --bg-card: #27354a;
+    --bg-card-hover: #33445c;
+    --border-color: #3b4d66;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --accent: #2dd4bf;
+    --accent-secondary: #38bdf8;
+    --accent-hover: #14b8a6;
+    --accent-light: rgba(45, 212, 191, 0.16);
+  }
+
+  /* 10. Crimson Velvet (Ruby Red) */
+  [data-theme="crimson"] {
+    --bg-primary: #0f0507;
+    --bg-secondary: #17090c;
+    --bg-card: #240e13;
+    --bg-card-hover: #33141b;
+    --border-color: #4a1c27;
+    --text-main: #fff1f2;
+    --text-muted: #fecdd3;
+    --accent: #f43f5e;
+    --accent-secondary: #fb7185;
+    --accent-hover: #e11d48;
+    --accent-light: rgba(244, 63, 94, 0.18);
+  }
+}
+
+/* Dual-Tone Gradient Helper */
+.bg-gradient-dual {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-secondary) 100%);
+}
+
+.text-gradient-dual {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+body {
+  margin: 0;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  overflow-x: hidden;
+}
+
+code, pre {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* Custom Native Select Enhancements */
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2394a3b8' stroke-width='2'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.6rem center;
+  background-size: 0.85em 0.85em;
+  padding-right: 1.8rem !important;
+  transition: all 0.2s ease;
+}
+
+select:hover {
+  border-color: var(--accent) !important;
+}
+
+select:focus {
+  outline: none;
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 0 2px var(--accent-light) !important;
+}
+
+select option {
+  background-color: var(--bg-card);
+  color: var(--text-main);
+  padding: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+
